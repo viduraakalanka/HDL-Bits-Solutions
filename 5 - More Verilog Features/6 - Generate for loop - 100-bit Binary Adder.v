@@ -13,6 +13,7 @@ module top_module(
     output [99:0] cout,
     output [99:0] sum );
 
+    /*
     genvar i;
     
     one_bit_FA FA1(a[0],b[0],cin,cout[0],sum[0]);
@@ -26,4 +27,6 @@ module top_module(
         one_bit_FA FA(a[i],b[i],cout[i-1],cout[i],sum[i]);
     end
     endgenerate
+    */
+    one_bit_FA adder_100 [99:0] (a,b,{cout[98:0],cin},sum,cout);
 endmodule
